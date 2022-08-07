@@ -1,18 +1,54 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { RouterModule } from '@angular/router';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { ForgotComponent } from './components/forgot/forgot.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { CartComponent } from './components/cart/cart.component';
+import { OrdersComponent } from './components/orders/orders.component';
+import { OrderDetailComponent } from './components/order-detail/order-detail.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { AboutComponent } from './components/about/about.component';
+import { HomeComponent } from './components/home/home.component';
+import { ProductsComponent } from './components/products/products.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { FooterInfoComponent } from './components/footer-info/footer-info.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    SignupComponent,
+    ForgotComponent,
+    ProfileComponent,
+    WishlistComponent,
+    CartComponent,
+    OrdersComponent,
+    OrderDetailComponent,
+    ContactComponent,
+    AboutComponent,
+    HomeComponent,
+    ProductsComponent,
+    NavigationComponent,
+    FooterComponent,
+    FooterInfoComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
