@@ -79,6 +79,7 @@
   height: 40px;
   width: auto;
   min-width: unset;
+  margin-top: 15px;
 }
 
 .search_form button {
@@ -91,6 +92,7 @@
   color: #ffffff;
   background-color: #f3c93e;
   border-radius: 0 5px 5px 0;
+  margin-left: 0px;
 }
 
 .user_option_box {
@@ -214,6 +216,10 @@
 }
 
 a {
+  text-decoration: none;
+}
+
+a:hover {
   text-decoration: none;
 }
 

@@ -24,13 +24,29 @@
             </button>
           </div>
           <div class="user_option_box">
-            <a href="" class="account-link">
+            <a routerLink="/profile" class="account-link">
               <i class="fa fa-user" aria-hidden="true"></i>
-              <span> My Account </span>
+              <span> Profile </span>
             </a>
-            <a href="" class="cart-link">
+            <a routerLink="/wishlist" class="cart-link">
+              <i class="fa fa-heart" aria-hidden="true"></i>
+              <span> Wishlist </span>
+            </a>
+            <a routerLink="/cart" class="cart-link">
               <i class="fa fa-shopping-cart" aria-hidden="true"></i>
               <span> Cart </span>
+            </a>
+            <a routerLink="/orders" class="cart-link">
+              <i class="fa fa-first-order" aria-hidden="true"></i>
+              <span> Orders </span>
+            </a>
+            <a *ngIf="!loggedInUser" routerLink="/login" class="cart-link">
+              <i class="fa fa-sign-in" aria-hidden="true"></i>
+              <span> Login </span>
+            </a>
+            <a *ngIf="loggedInUser" routerLink="/logout" class="cart-link">
+              <i class="fa fa-sign-out" aria-hidden="true"></i>
+              <span> Logout </span>
             </a>
           </div>
         </div>
@@ -39,7 +55,7 @@
     <div class="header_bottom">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" routerLink="/">
             <span> Minics </span>
           </a>
 
@@ -58,21 +74,21 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
               <li class="nav-item active">
-                <a class="nav-link" href="index.html"
+                <a class="nav-link" routerLink="/"
                   >Home <span class="sr-only">(current)</span></a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.html"> About</a>
+                <a class="nav-link" routerLink="/about"> About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="product.html">Products</a>
+                <a class="nav-link" routerLink="/products">Products</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="why.html">Why Us</a>
+                <a class="nav-link" routerLink="/why">Why Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="testimonial.html">Testimonial</a>
+                <a class="nav-link" routerLink="/contact">Contact</a>
               </li>
             </ul>
           </div>

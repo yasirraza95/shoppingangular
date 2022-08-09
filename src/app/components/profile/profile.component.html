@@ -1,1 +1,71 @@
-<p>profile works!</p>
+<div>
+  <section class="product_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>Profile</h2>
+      </div>
+      <form>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+            <label for="username">Username</label>
+              <input
+                id="username"
+                name="username"
+                type="text"
+                class="form-control"
+                disabled="true"
+                [(ngModel)]="username"
+              />
+
+              <br />
+              <label for="name">Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                class="form-control"
+                tabIndex="2"
+                [(ngModel)]="name"
+              />
+
+              <br />
+            </div>
+            <div class="col-md-6">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                class="form-control"
+                disabled="true"
+                tabIndex="1"
+                [(ngModel)]="email"
+              />
+              <br />
+
+              <label for="phone">Phone</label>
+              <input
+                id="phone"
+                name="phone"
+                type="number"
+                class="form-control"
+                tabIndex="3"
+                [(ngModel)]="phone"
+              />
+              <br />
+            </div>
+
+            <div class="text-center">
+              <br />
+
+              <button type="submit" class="btn btn-primary" tabIndex="6">
+                Update Profile
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>

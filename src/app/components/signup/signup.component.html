@@ -1,1 +1,85 @@
-<p>signup works!</p>
+<section class="product_section layout_padding">
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2>Signup</h2>
+    </div>
+    <form>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <label for="username">Username</label>
+            <input
+              id="username"
+              name="username"
+              type="text"
+              class="form-control"
+              tabIndex="1"
+            />
+
+            <br />
+            <label for="name">Name</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              class="form-control"
+              tabIndex="3"
+            />
+            <br />
+
+            <label for="password">Password</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              class="form-control"
+              tabIndex="5"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              class="form-control"
+              tabIndex="2"
+            />
+            <br />
+            <label for="email">Email</label>
+            <input
+              id="phone"
+              name="phone"
+              type="number"
+              class="form-control"
+              tabIndex="4"
+            />
+            <br />
+
+            <label for="confirm_password">Confirm Password</label>
+            <input
+              id="confirm_password"
+              name="confirm_password"
+              type="password"
+              class="form-control"
+              tabIndex="6"
+            />
+          </div>
+
+          <div class="text-center">
+            <br />
+
+            <button type="submit" class="btn btn-primary" tabIndex="6">
+              Create Account
+            </button>
+            <br />
+            <br />
+            <a routerLink="/login">
+              Already have an Account? Click here to Login
+            </a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

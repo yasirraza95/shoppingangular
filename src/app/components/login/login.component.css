@@ -1,0 +1,9 @@
+.heading_center {
+  align-items: center;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.row:only-child {
+  margin-top: 18px;
+}

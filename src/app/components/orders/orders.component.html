@@ -1,1 +1,45 @@
-<p>orders works!</p>
+<section class="product_section layout_padding">
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2>Orders</h2>
+    </div>
+    <div>
+      <div class="container">
+        <div class="spinner-border" role="status" *ngIf="loading | async">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="row">
+          <table>
+            <thead>
+              <tr>
+                <th>Order No.</th>
+                <th>Address</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Price</th>
+                <th>Date</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let order of orders">
+                <td>{{ order._id }}</td>
+                <td>{{ order.address }}</td>
+                <td>{{ order.email }}</td>
+                <td>{{ order.phone }}</td>
+                <td>{{ order.price }}</td>
+                <td>{{ order.date }}</td>
+                <td><button
+                  class="btn btn-primary"
+                  (click)="viewDetail(order._id)"
+                >
+                  Detail
+                </button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

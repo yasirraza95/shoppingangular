@@ -1,1 +1,51 @@
-<p>login works!</p>
+<section class="product_section layout_padding">
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2>Login</h2>
+    </div>
+    <form>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+            <label for="username">Username</label>
+            <input
+              id="username"
+              name="username"
+              type="text"
+              class="form-control"
+              tabIndex="1"
+            />
+
+            <br />
+
+            <label for="password">Password</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              class="form-control"
+              tabIndex="2"
+            />
+          </div>
+          <div class="col-md-3"></div>
+
+          <div class="text-center">
+            <br />
+            <button type="submit" class="btn btn-primary" tabIndex="3">
+              Login
+            </button>
+
+            <br />
+            <br />
+            <a routerLink="/signup">New User? Create Account</a>
+            <br />
+            <br />
+
+            <a routerLink="/forgot">Forgot Password? Click here</a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

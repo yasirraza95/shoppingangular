@@ -1,0 +1,49 @@
+<section class="product_section layout_padding">
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2>Shipping Information</h2>
+    </div>
+    <form onSubmit="{formik.handleSubmit}">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+            <input
+              id="email"
+              name="email"
+              type="email"
+              class="form-control"
+              tabIndex="1"
+            />
+            <br />
+            <input
+              id="phone"
+              name="phone"
+              type="number"
+              class="form-control"
+              tabIndex="2"
+            />
+            <br />
+
+            <input
+              id="address"
+              name="address"
+              type="text"
+              class="form-control"
+              tabIndex="3"
+            />
+          </div>
+          <div class="col-md-3"></div>
+
+          <div class="text-center">
+            <br />
+
+            <button type="submit" class="btn btn-primary" tabIndex="4">
+              Place Order
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

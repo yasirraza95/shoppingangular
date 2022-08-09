@@ -1,3 +1,21 @@
+.heading_center {
+  align-items: center;
+  text-align: center;
+  margin-top: 40px;
+}
+
+table {
+  text-align: center;
+}
+
+.row:only-child {
+  margin-top: 15px;
+}
+
+.content_right {
+  text-align: right;
+}
+
 img {
-  width: 150px;
+  width: 70px;
 }

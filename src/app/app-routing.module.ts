@@ -11,10 +11,12 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { WhyComponent } from './components/why/why.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 
 const routes: Routes = [
 	{path: '', component: HomeComponent},
+	{path: 'why', component: WhyComponent},
 	{path: 'about', component: AboutComponent},
 	{path: 'cart', component: CartComponent},
 	{path: 'contact', component: ContactComponent},

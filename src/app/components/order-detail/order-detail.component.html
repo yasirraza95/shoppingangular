@@ -1,1 +1,41 @@
-<p>order-detail works!</p>
+<section class="product_section layout_padding">
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2>Order Detail</h2>
+    </div>
+    <div>
+      <div class="container">
+        <div class="spinner-border" role="status" *ngIf="loading | async">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="row">
+          <table>
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let detail of details">
+                <td>
+                  <img
+                    src="{{ detail.image }}"
+                    alt="{{ detail.name }}"
+                  />
+                </td>
+                <td>{{ detail.name }}</td>
+                <td>{{ detail.price }}</td>
+                <td>{{ detail.quantity }}</td>
+                <td>{{ detail.total_price }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

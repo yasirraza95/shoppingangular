@@ -1,0 +1,17 @@
+.heading_center {
+  align-items: center;
+  text-align: center;
+  margin-top: 40px;
+}
+
+table {
+    text-align: center;
+}
+
+.row:only-child {
+  margin-top: 15px;
+}
+
+img {
+    width: 70px;
+}

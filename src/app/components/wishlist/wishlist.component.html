@@ -1,1 +1,51 @@
-<p>wishlist works!</p>
+<section class="product_section layout_padding">
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2>Wishlist</h2>
+    </div>
+    <div>
+      <div class="container">
+        <div class="spinner-border" role="status" *ngIf="loading | async">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="row">
+          <table>
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let wishlist of wishlists">
+                <td>
+                  <img
+                    src="{{ wishlist.prod_id.image }}"
+                    alt="{{ wishlist.prod_id.name }}"
+                  />
+                </td>
+                <td>{{ wishlist.prod_id.name }}</td>
+                <td>
+                  <button
+                    class="btn btn-primary"
+                    (click)="deleteWishlist(wishlist.prod_id._id)"
+                  >
+                    Delete
+                  </button>
+                  &nbsp;
+                  <button
+                    class="btn btn-primary"
+                    (click)="moveToCart(wishlist.prod_id._id)"
+                  >
+                    Move to Cart
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

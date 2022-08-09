@@ -21,6 +21,11 @@ import { ProductsComponent } from './components/products/products.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FooterInfoComponent } from './components/footer-info/footer-info.component';
+import { ShippingComponent } from './components/shipping/shipping.component';
+import { ThankyouComponent } from './components/thankyou/thankyou.component';
+import { WhyComponent } from './components/why/why.component';
+import { SliderComponent } from './components/slider/slider.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -40,6 +45,10 @@ import { FooterInfoComponent } from './components/footer-info/footer-info.compon
     NavigationComponent,
     FooterComponent,
     FooterInfoComponent,
+    ShippingComponent,
+    ThankyouComponent,
+    WhyComponent,
+    SliderComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +56,7 @@ import { FooterInfoComponent } from './components/footer-info/footer-info.compon
     RouterModule,
     FormsModule,
     HttpClientModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
