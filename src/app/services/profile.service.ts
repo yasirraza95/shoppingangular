@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { User } from '../interfaces/user';
+import { TokenService } from './token-service.service';
 
 @Injectable({
   providedIn: 'root',
@@ -9,16 +10,17 @@ import { User } from '../interfaces/user';
 export class ProfileService {
   httpOptions = {
     headers: new HttpHeaders({
-      Authorization: 'Bearer ' + environment.token,
+      Authorization: 'Bearer ' + this.tokenService.getToken(),
     }),
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private tokenService: TokenService) {}
 
   getProfile() {
-    //FIXME token + login user
     return this.http.get<User>(
-      environment.API_URL + '/user/profile/' + environment.user,
+      environment.API_URL +
+        '/user/profile/' +
+        this.tokenService.getUser().userId,
       this.httpOptions
     );
   }

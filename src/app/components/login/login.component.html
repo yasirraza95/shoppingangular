@@ -3,30 +3,50 @@
     <div class="heading_container heading_center">
       <h2>Login</h2>
     </div>
-    <form>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="container">
         <div class="row">
           <div class="col-md-3"></div>
           <div class="col-md-6">
+            <div class="error heading_center" *ngIf="errorMsg">
+              {{ errorMsg }}
+            </div>
+
             <label for="username">Username</label>
             <input
-              id="username"
-              name="username"
               type="text"
+              formControlName="username"
               class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f['username'].errors }"
               tabIndex="1"
             />
+            <div
+              *ngIf="submitted && f['username'].errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f['username'].errors['required']">
+                Username is required
+              </div>
+            </div>
 
             <br />
 
             <label for="password">Password</label>
             <input
-              id="password"
-              name="password"
+              formControlName="password"
               type="password"
               class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
               tabIndex="2"
             />
+            <div
+              *ngIf="submitted && f['password'].errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f['password'].errors['required']">
+                Password is required
+              </div>
+            </div>
           </div>
           <div class="col-md-3"></div>
 

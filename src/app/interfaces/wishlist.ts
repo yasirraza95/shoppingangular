@@ -1,8 +1,9 @@
 export interface Wishlist {
+    _id: string;
     prod_id: {
-        _id: String;
-        name: String;
-        image: String;
-        price: Number;
+        _id: string;
+        name: string;
+        image: string;
+        price: number;
     }
 }

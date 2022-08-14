@@ -13,6 +13,7 @@ import { OrdersService } from 'src/app/services/orders.service';
 export class OrdersComponent implements OnInit {
   orders: Orders[] = [];
   public loading = new BehaviorSubject<boolean>(true);
+  errorMsg: string = '';
 
   constructor(private ordersService: OrdersService, private router: Router) {}
 
@@ -27,7 +28,10 @@ export class OrdersComponent implements OnInit {
       next: (data: any) => {
         this.orders = data['data']['order'];
       },
-      error: (error: any) => {},
+      error: (error: any) => {
+        this.loading.next(false);
+        this.errorMsg = error.error.message;
+      },
       complete: () => {
         this.loading.next(false);
       },

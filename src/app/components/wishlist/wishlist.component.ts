@@ -12,6 +12,7 @@ import { WishlistService } from 'src/app/services/wishlist.service';
 export class WishlistComponent implements OnInit {
   wishlists: Wishlist[] = [];
   public loading = new BehaviorSubject<boolean>(true);
+  errorMsg: string = '';
 
   constructor(private wishlistService: WishlistService) {}
 
@@ -26,14 +27,31 @@ export class WishlistComponent implements OnInit {
       next: (data: any) => {
         this.wishlists = data['data']['wishlist'];
       },
-      error: (error: any) => {},
+      error: (error: any) => {
+        this.loading.next(false);
+        this.errorMsg = error.error.message;
+      },
       complete: () => {
         this.loading.next(false);
       },
     });
   }
 
-  deleteWishlist(id: String) {}
+  deleteWishlist(id: string) {
+    this.wishlistService.removeItem(id).subscribe({
+      next: (data: any) => {
+        console.log(data)
+        // this.wishlists = data['data']['wishlist'];
+      },
+      error: (error: any) => {
+        this.loading.next(false);
+        this.errorMsg = error.error.message;
+      },
+      complete: () => {
+        this.loading.next(false);
+      },
+    });
+  }
 
-  moveToCart(id: String) {}
+  moveToCart(id: string) {}
 }

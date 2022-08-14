@@ -16,13 +16,14 @@ export class OrderDetailComponent implements OnInit {
   id: String;
   details: OrderDetail[] = [];
   public loading = new BehaviorSubject<boolean>(true);
+  errorMsg: string = '';
 
   constructor(
     private router: Router,
     private currentRoute: ActivatedRoute,
     private ordersDtlService: OrderDetailService
   ) {
-    this.id = "";
+    this.id = '';
   }
 
   ngOnInit(): void {
@@ -45,7 +46,10 @@ export class OrderDetailComponent implements OnInit {
         this.details = data['data']['order'][0]['order_detail'];
         console.log(this.details);
       },
-      error: (error: any) => {},
+      error: (error: any) => {
+        this.loading.next(true);
+        this.errorMsg = error.error.message;
+      },
       complete: () => {
         this.loading.next(false);
       },

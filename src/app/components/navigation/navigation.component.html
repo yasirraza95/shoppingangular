@@ -24,27 +24,44 @@
             </button>
           </div>
           <div class="user_option_box">
-            <a routerLink="/profile" class="account-link">
+            <a *ngIf="isLoggedIn" routerLink="/profile" class="account-link">
               <i class="fa fa-user" aria-hidden="true"></i>
               <span> Profile </span>
             </a>
-            <a routerLink="/wishlist" class="cart-link">
+            <a *ngIf="isLoggedIn" routerLink="/wishlist" class="cart-link">
               <i class="fa fa-heart" aria-hidden="true"></i>
-              <span> Wishlist </span>
+              <span>
+                Wishlist
+                <span
+                  class="badge rounded-pill bg-success"
+                  *ngIf="wishlist > 0"
+                  >{{ wishlist }}</span
+                >
+              </span>
             </a>
-            <a routerLink="/cart" class="cart-link">
+            <a *ngIf="isLoggedIn" routerLink="/cart" class="cart-link">
               <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-              <span> Cart </span>
+              <span>
+                Cart
+                <span class="badge rounded-pill bg-success" *ngIf="cart > 0">{{
+                  cart
+                }}</span>
+              </span>
             </a>
-            <a routerLink="/orders" class="cart-link">
+            <a *ngIf="isLoggedIn" routerLink="/orders" class="cart-link">
               <i class="fa fa-first-order" aria-hidden="true"></i>
               <span> Orders </span>
             </a>
-            <a *ngIf="!loggedInUser" routerLink="/login" class="cart-link">
+            <a *ngIf="!isLoggedIn" routerLink="/login" class="cart-link">
               <i class="fa fa-sign-in" aria-hidden="true"></i>
               <span> Login </span>
             </a>
-            <a *ngIf="loggedInUser" routerLink="/logout" class="cart-link">
+            <a
+              *ngIf="isLoggedIn"
+              (click)="logout()"
+              routerLink="/"
+              class="cart-link"
+            >
               <i class="fa fa-sign-out" aria-hidden="true"></i>
               <span> Logout </span>
             </a>

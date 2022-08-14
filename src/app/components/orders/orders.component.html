@@ -8,6 +8,10 @@
         <div class="spinner-border" role="status" *ngIf="loading | async">
           <span class="sr-only">Loading...</span>
         </div>
+        <div class="alert alert-danger" role="alert" *ngIf="errorMsg != ''">
+          {{ errorMsg }}
+        </div>
+
         <div class="row">
           <table>
             <thead>
@@ -29,12 +33,14 @@
                 <td>{{ order.phone }}</td>
                 <td>{{ order.price }}</td>
                 <td>{{ order.date }}</td>
-                <td><button
-                  class="btn btn-primary"
-                  (click)="viewDetail(order._id)"
-                >
-                  Detail
-                </button></td>
+                <td>
+                  <button
+                    class="btn btn-primary"
+                    (click)="viewDetail(order._id)"
+                  >
+                    Detail
+                  </button>
+                </td>
               </tr>
             </tbody>
           </table>

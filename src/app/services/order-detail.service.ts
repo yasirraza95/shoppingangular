@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { OrderDetail } from '../interfaces/order-detail';
 import { Orders } from '../interfaces/orders';
+import { TokenService } from './token-service.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +11,11 @@ import { Orders } from '../interfaces/orders';
 export class OrderDetailService {
   httpOptions = {
     headers: new HttpHeaders({
-      Authorization: 'Bearer ' + environment.token,
+      Authorization: 'Bearer ' + this.tokenService.getToken(),
     }),
   };
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private tokenService: TokenService) { }
 
   getDetail(id: String) {
     return this.http.get<OrderDetail[]>(

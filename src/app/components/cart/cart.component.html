@@ -6,7 +6,14 @@
     <div>
       <div class="container">
         <div class="row">
-          <table>
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="cartItem.length === 0"
+          >
+            No products in cart
+          </div>
+          <table *ngIf="cartItem.length > 0">
             <thead>
               <tr>
                 <th>Image</th>
@@ -18,30 +25,40 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr *ngFor="let cart of cartItem">
                 <td>
-                  <img src="assets/images/p1.png" />
+                  <img src="{{ cart['image'] }}" alt="{{ cart['name'] }}" />
                 </td>
-                <td>Abc</td>
+                <td>{{ cart["name"] }}</td>
                 <td>
-                  <button class="btn btn-primary" disabled onclick="">-</button>
-                  1
-                  <button class="btn btn-primary" onclick="">+</button>
+                  <button
+                    class="btn btn-primary"
+                    disabled="{{ cart['quantity'] === 1 }}"
+                    (click)="minusQuantity(cart)"
+                  >
+                    -
+                  </button>
+                  {{ cart['quantity'] }}
+                  <button class="btn btn-primary" (click)="addQuantity(cart)">
+                    +
+                  </button>
                 </td>
-                <td>123</td>
-                <td>123</td>
+                <td>{{ cart['price'] }}</td>
+                <td>{{ cart['quantity'] * cart['price'] }}</td>
                 <td>
-                  <button class="btn btn-primary" onclick="">Delete</button>
+                  <button class="btn btn-primary" (click)="removeProduct(cart)">
+                    Delete
+                  </button>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
-        <div class="row">
+        <div class="row" *ngIf="cartItem.length > 0">
           <div class="content_right">
-            <b> Total: 123 </b>
+            <b> Total: {{ total }} </b>
             <br />
-            <button class="btn btn-primary" onclick="">
+            <button class="btn btn-primary" (click)="shippingHandler()">
               <span>Place Order</span>
             </button>
           </div>
