@@ -52,16 +52,6 @@ export class ProductsComponent implements OnInit {
   // ];
 
   addToCart(product: Product) {
-    // const existProduct = this.cartItems.find((x) => x._id === product.id);
-    // const quantity = existProduct ? existProduct.quantity + 1 : 1;
-    // if (quantity == 1) {
-    //   console.log('exits');
-    // } else {
-    //   console.log('new');
-    // }
-    // return;
-    product.quantity = 1;
-
-    this.cartService.addToCart(product);
+    this.cartService.addItem(product);
   }
 }

@@ -11,7 +11,7 @@
         <div class="alert alert-danger" role="alert" *ngIf="errorMsg != ''">
           {{ errorMsg }}
         </div>
-        <div class="row">
+        <div class="row" *ngIf="wishlists.length > 0">
           <table>
             <thead>
               <tr>

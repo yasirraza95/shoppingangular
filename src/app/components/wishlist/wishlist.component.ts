@@ -20,6 +20,10 @@ export class WishlistComponent implements OnInit {
     this.fetchWishlist();
   }
 
+  ngDoCheck(): void {
+    // this.fetchWishlist();
+  }
+
   private fetchWishlist() {
     this.loading.next(true);
 
@@ -28,6 +32,8 @@ export class WishlistComponent implements OnInit {
         this.wishlists = data['data']['wishlist'];
       },
       error: (error: any) => {
+        this.wishlists = []
+        console.log(this.wishlists.length)
         this.loading.next(false);
         this.errorMsg = error.error.message;
       },
@@ -41,6 +47,7 @@ export class WishlistComponent implements OnInit {
     this.wishlistService.removeItem(id).subscribe({
       next: (data: any) => {
         console.log(data)
+        this.fetchWishlist();
         // this.wishlists = data['data']['wishlist'];
       },
       error: (error: any) => {
